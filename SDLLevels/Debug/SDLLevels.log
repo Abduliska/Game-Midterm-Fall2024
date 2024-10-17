@@ -1,0 +1,20 @@
+﻿          1 file(s) copied.
+          1 file(s) copied.
+  Asset.cpp
+  AssetController.cpp
+  FileController.cpp
+  GameController.cpp
+  Renderer.cpp
+  Resource.cpp
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Resource.cpp(52,40): warning C4267: '=': conversion from 'size_t' to 'byte', possible loss of data
+  SDLLevels.cpp
+  SpriteAnim.cpp
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\SpriteAnim.cpp(34,34): warning C4244: '+=': conversion from 'float' to 'short', possible loss of data
+  SpriteSheet.cpp
+  StackAllocator.cpp
+  Texture.cpp
+  TGAReader.cpp
+  Timing.cpp
+  TTFont.cpp
+  Generating Code...
+  SDLLevels.vcxproj -> C:\Users\akret\source\repos\SDLLevels - Copy (2)\Debug\SDLLevels.exe
