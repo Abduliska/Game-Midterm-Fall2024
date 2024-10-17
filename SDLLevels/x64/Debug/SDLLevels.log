@@ -1,0 +1,36 @@
+﻿          1 file(s) copied.
+          1 file(s) copied.
+GameController.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
+GameController.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateRGBSurfaceFrom referenced in function "public: struct SDL_Texture * __cdecl Renderer::GetSDLTexture(class Texture *)" (?GetSDLTexture@Renderer@@QEAAPEAUSDL_Texture@@PEAVTexture@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: struct SDL_Texture * __cdecl Renderer::GetSDLTexture(class Texture *)" (?GetSDLTexture@Renderer@@QEAAPEAUSDL_Texture@@PEAVTexture@@@Z)
+TTFont.obj : error LNK2001: unresolved external symbol SDL_FreeSurface
+Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "public: void __cdecl Renderer::Initialize(int,int)" (?Initialize@Renderer@@QEAAXHH@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_GetWindowSize referenced in function "public: struct Point __cdecl Renderer::GetWindowSize(void)" (?GetWindowSize@Renderer@@QEAA?AUPoint@@XZ)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "public: void __cdecl Renderer::Shutdown(void)" (?Shutdown@Renderer@@QEAAXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "public: void __cdecl Renderer::Initialize(int,int)" (?Initialize@Renderer@@QEAAXHH@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: struct SDL_Texture * __cdecl Renderer::GetSDLTexture(class Texture *)" (?GetSDLTexture@Renderer@@QEAAPEAUSDL_Texture@@PEAVTexture@@@Z)
+TTFont.obj : error LNK2001: unresolved external symbol SDL_CreateTextureFromSurface
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderSetViewport referenced in function "public: void __cdecl Renderer::SetViewport(struct Rect)" (?SetViewport@Renderer@@QEAAXURect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "public: void __cdecl Renderer::SetDrawColor(struct Color)" (?SetDrawColor@Renderer@@QEAAXUColor@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "public: void __cdecl Renderer::ClearScreen(void)" (?ClearScreen@Renderer@@QEAAXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderDrawPoint referenced in function "public: void __cdecl Renderer::RenderPoint(struct Point)" (?RenderPoint@Renderer@@QEAAXUPoint@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderDrawLine referenced in function "public: void __cdecl Renderer::RenderLine(struct Rect)" (?RenderLine@Renderer@@QEAAXURect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderDrawRect referenced in function "public: void __cdecl Renderer::RenderRectangle(struct Rect)" (?RenderRectangle@Renderer@@QEAAXURect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderFillRect referenced in function "public: void __cdecl Renderer::RenderFillRectangle(struct Rect)" (?RenderFillRectangle@Renderer@@QEAAXURect@@@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_RenderCopyEx referenced in function "public: void __cdecl Renderer::RenderTexture(class Texture *,struct Point)" (?RenderTexture@Renderer@@QEAAXPEAVTexture@@UPoint@@@Z)
+TTFont.obj : error LNK2001: unresolved external symbol SDL_RenderCopyEx
+Renderer.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: void __cdecl Renderer::Shutdown(void)" (?Shutdown@Renderer@@QEAAXXZ)
+TTFont.obj : error LNK2001: unresolved external symbol SDL_DestroyTexture
+Renderer.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "public: void __cdecl Renderer::Shutdown(void)" (?Shutdown@Renderer@@QEAAXXZ)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "public: void __cdecl Renderer::Initialize(int,int)" (?Initialize@Renderer@@QEAAXHH@Z)
+Renderer.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "public: void __cdecl Renderer::Shutdown(void)" (?Shutdown@Renderer@@QEAAXXZ)
+Timing.obj : error LNK2019: unresolved external symbol SDL_GetTicks referenced in function "public: __cdecl Timing::Timing(void)" (??0Timing@@QEAA@XZ)
+TTFont.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "public: void __cdecl TTFont::Initialize(int)" (?Initialize@TTFont@@QEAAXH@Z)
+TTFont.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: void __cdecl TTFont::Initialize(int)" (?Initialize@TTFont@@QEAAXH@Z)
+TTFont.obj : error LNK2019: unresolved external symbol TTF_RenderUTF8_Blended referenced in function "public: void __cdecl TTFont::Write(struct SDL_Renderer *,char const *,struct SDL_Color,struct SDL_Point)" (?Write@TTFont@@QEAAXPEAUSDL_Renderer@@PEBDUSDL_Color@@USDL_Point@@@Z)
+TTFont.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: void __cdecl TTFont::Shutdown(void)" (?Shutdown@TTFont@@QEAAXXZ)
+C:\Users\akret\source\repos\SDLLevels\External\SDL2-2.30.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels\External\SDL2-2.30.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels\External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels\x64\Debug\SDLLevels.exe : fatal error LNK1120: 26 unresolved externals
