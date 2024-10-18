@@ -145,9 +145,11 @@ copy /Y "$(SolutionDir)External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.dll" "$(TargetD
     <ClCompile Include="AssetController.cpp" />
     <ClCompile Include="FileController.cpp" />
     <ClCompile Include="GameController.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="SDLLevels.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="SpriteAnim.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
@@ -155,6 +157,7 @@ copy /Y "$(SolutionDir)External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.dll" "$(TargetD
     <ClCompile Include="TGAReader.cpp" />
     <ClCompile Include="Timing.cpp" />
     <ClCompile Include="TTFont.cpp" />
+    <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asset.h" />
@@ -162,11 +165,13 @@ copy /Y "$(SolutionDir)External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.dll" "$(TargetD
     <ClInclude Include="BasicStructs.h" />
     <ClInclude Include="FileController.h" />
     <ClInclude Include="GameController.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Serializable.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="SpriteAnim.h" />
     <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="StackAllocator.h" />
@@ -175,6 +180,7 @@ copy /Y "$(SolutionDir)External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.dll" "$(TargetD
     <ClInclude Include="TGAReader.h" />
     <ClInclude Include="Timing.h" />
     <ClInclude Include="TTFont.h" />
+    <ClInclude Include="Unit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

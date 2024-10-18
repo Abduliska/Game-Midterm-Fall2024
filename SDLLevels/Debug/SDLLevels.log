@@ -1,26 +1,4 @@
 ﻿          1 file(s) copied.
           1 file(s) copied.
-  Asset.cpp
-  AssetController.cpp
-  FileController.cpp
   GameController.cpp
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(24,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(77,56): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(78,31): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(82,133): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(82,98): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(84,135): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(84,99): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-  Renderer.cpp
-  Resource.cpp
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Resource.cpp(52,40): warning C4267: '=': conversion from 'size_t' to 'byte', possible loss of data
-  SDLLevels.cpp
-  SpriteAnim.cpp
-  SpriteSheet.cpp
-  StackAllocator.cpp
-  TGAReader.cpp
-  TTFont.cpp
-  Texture.cpp
-  Timing.cpp
-  Generating Code...
   SDLLevels.vcxproj -> C:\Users\akret\source\repos\SDLLevels - Copy (2)\Debug\SDLLevels.exe

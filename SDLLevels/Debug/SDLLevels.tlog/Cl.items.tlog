@@ -2,9 +2,11 @@ C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Asset.cpp;C:\Users\ak
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\AssetController.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\AssetController.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\FileController.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\FileController.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\GameController.obj
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Level.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\Level.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Renderer.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\Renderer.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Resource.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\Resource.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\SDLLevels.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\SDLLevels.obj
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\SoundEffect.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\SoundEffect.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\SpriteAnim.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\SpriteAnim.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\SpriteSheet.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\SpriteSheet.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\StackAllocator.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\StackAllocator.obj
@@ -12,3 +14,4 @@ C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Texture.cpp;C:\Users\
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\TGAReader.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\TGAReader.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Timing.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\Timing.obj
 C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\TTFont.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\TTFont.obj
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Unit.cpp;C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\Debug\Unit.obj
