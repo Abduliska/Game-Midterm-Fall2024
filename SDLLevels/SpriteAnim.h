@@ -29,7 +29,7 @@ private:
     // Members
     short m_clipStart;   // Starting clip index
     short m_clipCount;   // Number of clips
-    short m_clipCurrent; // Current clip index
+    float m_clipCurrent; // Current clip index
     float m_clipSpeed;   // Speed of animation
     short m_clipEnd;     // Ending clip index
 };

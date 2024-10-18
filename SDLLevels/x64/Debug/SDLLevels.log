@@ -1,5 +1,13 @@
 ﻿          1 file(s) copied.
           1 file(s) copied.
+  GameController.cpp
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(24,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(76,56): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(77,31): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(81,133): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(81,98): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(83,135): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(83,99): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 GameController.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
 GameController.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
 Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateRGBSurfaceFrom referenced in function "public: struct SDL_Texture * __cdecl Renderer::GetSDLTexture(class Texture *)" (?GetSDLTexture@Renderer@@QEAAPEAUSDL_Texture@@PEAVTexture@@@Z)
@@ -30,7 +38,7 @@ TTFont.obj : error LNK2019: unresolved external symbol TTF_Init referenced in fu
 TTFont.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: void __cdecl TTFont::Initialize(int)" (?Initialize@TTFont@@QEAAXH@Z)
 TTFont.obj : error LNK2019: unresolved external symbol TTF_RenderUTF8_Blended referenced in function "public: void __cdecl TTFont::Write(struct SDL_Renderer *,char const *,struct SDL_Color,struct SDL_Point)" (?Write@TTFont@@QEAAXPEAUSDL_Renderer@@PEBDUSDL_Color@@USDL_Point@@@Z)
 TTFont.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: void __cdecl TTFont::Shutdown(void)" (?Shutdown@TTFont@@QEAAXXZ)
-C:\Users\akret\source\repos\SDLLevels\External\SDL2-2.30.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels\External\SDL2-2.30.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels\External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels\x64\Debug\SDLLevels.exe : fatal error LNK1120: 26 unresolved externals
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2-2.30.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2-2.30.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\akret\source\repos\SDLLevels - Copy (2)\x64\Debug\SDLLevels.exe : fatal error LNK1120: 26 unresolved externals

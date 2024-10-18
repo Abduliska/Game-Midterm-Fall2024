@@ -14,6 +14,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_pixels.h>
+#include <cstdlib>
 
 //Project headers
 #include "Singleton.h"
