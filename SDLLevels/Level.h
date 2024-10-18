@@ -1,7 +1,7 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include <fstream>
+#include "StandardIncludes.h"
 #include "SpriteSheet.h"
 #include "Renderer.h"
 #include "Timing.h"
@@ -10,19 +10,22 @@
 class Level
 {
 public:
-    // Constructor and Destructor
+    
     Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font);
     ~Level();
 
-    // Serialize and Deserialize functions
+    //save and load
     void Serialize(std::ostream& stream);
     void Deserialize(std::istream& stream);
 
     // Function to run level1 logic
-    void RunLevel1Logic(float deltaTime);
+    void RunLevel1Logic(float deltaTime, float gameTime);
+
+    
+    bool autoSaved;
 
 private:
-    // Variables to save and load
+    // Variables I will be sending to save and load
     float rectX;
     float rectAsh;
     float scale;
@@ -30,7 +33,11 @@ private:
     int spriteHeight;
     int currentFrame;
 
-    // Dependencies (Renderer, Sheet, etc.)
+    float autoSaveMsgTimer;
+
+
+
+    // Dependencies 
     SpriteSheet* sheet;
     Renderer* renderer;
     TTFont* font;

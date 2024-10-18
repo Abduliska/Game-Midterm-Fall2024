@@ -8,7 +8,7 @@
 
 
 GameController::GameController()
-    : currentState(GameState::LEVEL1)
+    : currentState(GameState::LEVEL1),gameTime(0.0f)
 {
 
     m_sdlEvent = {};
@@ -51,14 +51,15 @@ void GameController::RunGame()
     // this maps to our warrior tga file.
     sheet->SetSize(17, 6, 69, 44);
 
-   // sheet->AddAnimation(EN_AN_IDLE, 0, 6, 6.0f);
-   sheet->AddAnimation(EN_AN_RUN, 6, 7, 6.0f);
+    // sheet->AddAnimation(EN_AN_IDLE, 0, 6, 6.0f);
+    sheet->AddAnimation(EN_AN_RUN, 6, 7, 6.0f);
     Level* level = new Level(sheet, r, font);
     
 
     while (m_sdlEvent.type != SDL_QUIT)
     {
         t->Tick();
+        gameTime += t->GetDeltaTime();
         SDL_PollEvent(&m_sdlEvent);
 
 
@@ -66,7 +67,8 @@ void GameController::RunGame()
         {
         case GameState::LEVEL1:
         {
-           level->RunLevel1Logic(t->GetDeltaTime());           
+            //So I pass GetDeltaTime() for frame consistency, gameTime is for the total time passed
+           level->RunLevel1Logic(t->GetDeltaTime(),gameTime);           
             break;
         }
         case GameState::LEVEL2:

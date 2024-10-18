@@ -3,7 +3,7 @@
 
 Level::Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font)
     : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
-    sheet(sheet), renderer(renderer), font(font)
+    sheet(sheet), renderer(renderer), font(font), autoSaved(false), autoSaveMsgTimer(0.0f)
 {
 }
 
@@ -33,7 +33,7 @@ void Level::Deserialize(std::istream& stream)
 }
 
 
-void Level::RunLevel1Logic(float deltaTime)
+void Level::RunLevel1Logic(float deltaTime,float gameTime)
 {
     rectX += 100 * deltaTime;  
     rectAsh += 200 * deltaTime;
@@ -52,7 +52,10 @@ void Level::RunLevel1Logic(float deltaTime)
 
     //GUI fps
     std::string fps = "Frames Per Second: " + std::to_string(Timing::Instance().GetFPS());
-    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 0, 0 });
+    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 0, 0 });
+
+    std::string time = "Game Time: " + std::to_string(static_cast<int>(gameTime));
+    font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 400, 0 });
 
     
     //std::cout << "Delta Time: " << deltaTime << std::endl;
