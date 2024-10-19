@@ -87,22 +87,6 @@ void SpriteSheet::Deserialize(std::istream& _stream) {
     Texture::Deserialize(_stream);
 }
 
-float SpriteSheet::GetAnimationSpeed(AnimationNames _name) const {
-    auto it = m_animations.find(_name);
-    if (it != m_animations.end()) {
-        return it->second->GetClipSpeed();  // Access the clip speed via SpriteAnim
-    }
-    return -1.0f; 
-}
-
-
-void SpriteSheet::SetAnimationSpeed(AnimationNames _name, float newSpeed) {
-    auto it = m_animations.find(_name);
-    if (it != m_animations.end()) {
-        it->second->SetClipSpeed(newSpeed);  // Set the new clip speed via SpriteAnim
-    }
-}
-
 void SpriteSheet::ToString() {
     cout << "SPRITE SHEET:";
     cout << "  Rows: " << (int)m_rows;

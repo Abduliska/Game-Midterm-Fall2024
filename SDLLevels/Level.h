@@ -25,9 +25,7 @@ public:
     bool Level2TransitionTriggered();
     bool Level2EndTriggered();
     
-    
     bool autoSaved;
-    bool initializePosition;
     
 
 private:
@@ -38,13 +36,18 @@ private:
     int spriteWidth;
     int spriteHeight;
     int currentFrame;
+    std::vector<int> m_randSpeeds;
+    std::vector<float> m_warriorXPositions;
     int viewportEdge;
+    bool isGenerated = false;
+
+    // Methods
+    void GenerateRandomSpeeds();
+    //void InitializeWarriorPositions(vector<float> _warriorXPositions);
 
     float autoSaveMsgTimer;
     string m_autoSaveStatus;
 
-    void InitializeWarriorSpeeds(float deltaTime);
-    
 
     // Dependencies 
     SpriteSheet* sheet;

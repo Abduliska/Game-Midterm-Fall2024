@@ -1,13 +1,55 @@
 ﻿          1 file(s) copied.
           1 file(s) copied.
+  Asset.cpp
+  AssetController.cpp
+  FileController.cpp
   GameController.cpp
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(24,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(76,56): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(77,31): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(81,133): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(81,98): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(83,135): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\SDLLevels\GameController.cpp(83,99): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  Level.cpp
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(56,56): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(56,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(56,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(58,61): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(58,28): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(58,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(60,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(60,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(60,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(62,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(62,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(62,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(64,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(64,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(64,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(66,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(66,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(66,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(68,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(68,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(68,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(70,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(70,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(70,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(72,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(72,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(72,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(74,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(74,26): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Level.cpp(74,14): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  Renderer.cpp
+  Resource.cpp
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\Resource.cpp(52,40): warning C4267: '=': conversion from 'size_t' to 'byte', possible loss of data
+  SDLLevels.cpp
+  SoundEffect.cpp
+  SpriteAnim.cpp
+  SpriteSheet.cpp
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\SDLLevels\SpriteSheet.cpp(59,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  StackAllocator.cpp
+  Texture.cpp
+  TGAReader.cpp
+  Timing.cpp
+  TTFont.cpp
+  Unit.cpp
+  Generating Code...
 GameController.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
 GameController.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl GameController::RunGame(void)" (?RunGame@GameController@@QEAAXXZ)
 Renderer.obj : error LNK2019: unresolved external symbol SDL_CreateRGBSurfaceFrom referenced in function "public: struct SDL_Texture * __cdecl Renderer::GetSDLTexture(class Texture *)" (?GetSDLTexture@Renderer@@QEAAPEAUSDL_Texture@@PEAVTexture@@@Z)
@@ -38,7 +80,7 @@ TTFont.obj : error LNK2019: unresolved external symbol TTF_Init referenced in fu
 TTFont.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: void __cdecl TTFont::Initialize(int)" (?Initialize@TTFont@@QEAAXH@Z)
 TTFont.obj : error LNK2019: unresolved external symbol TTF_RenderUTF8_Blended referenced in function "public: void __cdecl TTFont::Write(struct SDL_Renderer *,char const *,struct SDL_Color,struct SDL_Point)" (?Write@TTFont@@QEAAXPEAUSDL_Renderer@@PEBDUSDL_Color@@USDL_Point@@@Z)
 TTFont.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: void __cdecl TTFont::Shutdown(void)" (?Shutdown@TTFont@@QEAAXXZ)
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2-2.30.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2-2.30.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\akret\source\repos\SDLLevels - Copy (2)\x64\Debug\SDLLevels.exe : fatal error LNK1120: 26 unresolved externals
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\External\SDL2-2.30.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\External\SDL2-2.30.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\External\SDL2_ttf-2.22.0\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\iuabd\Documents\Sheridan_College\Semester6_Fall\Game_Engineering\Midterm\ash_base\Game-Midterm-Fall2024-ash_branch\x64\Debug\SDLLevels.exe : fatal error LNK1120: 26 unresolved externals
