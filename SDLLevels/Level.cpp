@@ -6,14 +6,21 @@
 
 Level::Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font)
     : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
-    sheet(sheet), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), m_warriorXPositions(10, 0.0f), viewportEdge(1920)
+    sheet(sheet), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f), viewportEdge(1920)
 {
     if(!isGenerated) GenerateRandomSpeeds();
 }
 
 
-Level::~Level() {}
+Level::Level(SpriteSheet* sheet, SpriteSheet* sheet1, Renderer* renderer, TTFont* font)
+    : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
+    sheet(sheet), sheetRock(sheet1), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f), viewportEdge(1920), spriteHeightRock(20), spriteWidthRock(19), scaleRock(1.0f)
+{
+    if (!isGenerated) GenerateRandomSpeeds();
+}
 
+
+Level::~Level(){}
 
 void Level::Serialize(std::ostream& _stream)
 {
@@ -76,7 +83,7 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
     // setting my warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime + 1;
         renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
@@ -137,17 +144,12 @@ bool Level::Level2TransitionTriggered()
 void Level::RunLevel2Logic(float deltaTime, float gameTime) 
 {
     int offsets[] = { 10, 110, 210, 310, 410, 510, 610, 710, 810, 910 };  // y-offsets  
-    
+    int offsetsRock[] = { 10, 110, 210, 310, 410, 510, 610, 710, 810, 910 };  // x-offsets  
+
     renderer->SetDrawColor(Color(0, 128, 0, 255));
     renderer->ClearScreen();
 
-    //for (int i = 0; i < 10;i++)
-    //{
-    //    m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
-    //    renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
-    //        Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
-    //}
-
+    // Warriors
     for (int i = 0; i < 10;i++)
     {
         m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
@@ -155,6 +157,13 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
 
+    //Rocks
+    for (int i = 0; i < 10;i++)
+    {
+        m_rockYPositions[i] += m_randSpeeds[i] * deltaTime;
+        renderer->RenderTexture(sheetRock, sheetRock->Update(ROCK_FALL, deltaTime),
+            Rect(offsetsRock[i], m_rockYPositions[i],  (offsetsRock[i] + spriteHeightRock), (m_rockYPositions[i] + spriteWidthRock * scaleRock)));
+    }
 
     //GUI fps
     std::string fps = "FPS: " + std::to_string(Timing::Instance().GetFPS());
@@ -173,7 +182,6 @@ bool Level::Level2EndTriggered()
     {
         if (m_warriorXPositions[i] >= viewportEdge)
         {
-            std::cout << "Warrior " << i << " was first!" << std::endl;
             return true;
         }
     }

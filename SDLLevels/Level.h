@@ -12,8 +12,8 @@ class Level : public Resource
 public:
     
     Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font);
+    Level(SpriteSheet* sheet, SpriteSheet* sheet1, Renderer* renderer, TTFont* font);
     ~Level();
-
     //save and load
     void Serialize(std::ostream& _stream);
     void Deserialize(std::istream& _stream);
@@ -35,9 +35,13 @@ private:
     float scale;
     int spriteWidth;
     int spriteHeight;
+    float scaleRock;
+    int spriteWidthRock;
+    int spriteHeightRock;
     int currentFrame;
     std::vector<int> m_randSpeeds;
     std::vector<float> m_warriorXPositions;
+    std::vector<float> m_rockYPositions;
     int viewportEdge;
     bool isGenerated = false;
 
@@ -51,6 +55,7 @@ private:
 
     // Dependencies 
     SpriteSheet* sheet;
+    SpriteSheet* sheetRock;
     Renderer* renderer;
     TTFont* font;
 };
