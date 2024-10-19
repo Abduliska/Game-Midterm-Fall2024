@@ -46,6 +46,10 @@ void Level::SetAutoSaveStatus(const std::string& _status)
     m_autoSaveStatus = _status;
 }
 
+void Level::InitializeWarriorPositions(vector<float> _warriorXPositions)
+{
+    _warriorXPositions.assign(10, 0.0f);
+}
 
 void Level::GenerateRandomSpeeds() {
     std::random_device rd;
@@ -60,6 +64,7 @@ void Level::GenerateRandomSpeeds() {
     isGenerated = true;
 }
 
+
 void Level::RunLevel1Logic(float deltaTime,float gameTime)
 {   
     int offsets[] = { 10, 110, 210, 310, 410, 510, 610, 710, 810, 910 };  // y-offsets
@@ -71,7 +76,7 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
     // setting my warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime + 1;
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
         renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
@@ -119,22 +124,29 @@ bool Level::Level2TransitionTriggered()
         if (m_warriorXPositions[i] >= viewportEdge)
         {
             std::cout << "Warrior " << i << " was first!" << std::endl;
+            m_warriorXPositions = std::vector <float>(10, 0.0f);
             return true;
         }
     }
+
     return false;  // No warrior has crossed yet
+   
     
 }
 
 void Level::RunLevel2Logic(float deltaTime, float gameTime) 
 {
-
-    int offsets[] = { 10, 110, 210, 310, 410, 510, 610, 710, 810, 910 };  // y-offsets
+    int offsets[] = { 10, 110, 210, 310, 410, 510, 610, 710, 810, 910 };  // y-offsets  
     
-    m_warriorXPositions.assign(10, 10.0f);
-
     renderer->SetDrawColor(Color(0, 128, 0, 255));
     renderer->ClearScreen();
+
+    //for (int i = 0; i < 10;i++)
+    //{
+    //    m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
+    //    renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
+    //        Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
+    //}
 
     for (int i = 0; i < 10;i++)
     {
@@ -142,6 +154,7 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
         renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
+
 
     //GUI fps
     std::string fps = "FPS: " + std::to_string(Timing::Instance().GetFPS());

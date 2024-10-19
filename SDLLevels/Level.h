@@ -43,7 +43,7 @@ private:
 
     // Methods
     void GenerateRandomSpeeds();
-    //void InitializeWarriorPositions(vector<float> _warriorXPositions);
+    void InitializeWarriorPositions(vector<float> _warriorXPositions);
 
     float autoSaveMsgTimer;
     string m_autoSaveStatus;
