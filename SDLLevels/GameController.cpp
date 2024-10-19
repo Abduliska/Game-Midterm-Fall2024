@@ -49,7 +49,7 @@ void GameController::RunGame()
     // create a renderer.
     Renderer* r = &Renderer::Instance();
     // renderer makes window.
-    r->Initialize(1440, 900);//DONT FORGET TO CHANGE THIS TO 1080x1920
+    r->Initialize(1920, 1080);//DONT FORGET TO CHANGE THIS TO 1080x1920
     TTFont* font = new TTFont();
     font->Initialize(20);
     Point ws = r->GetWindowSize();

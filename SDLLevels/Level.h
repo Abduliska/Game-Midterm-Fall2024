@@ -38,6 +38,7 @@ private:
     int spriteWidth;
     int spriteHeight;
     int currentFrame;
+    int viewportEdge;
 
     float autoSaveMsgTimer;
     string m_autoSaveStatus;

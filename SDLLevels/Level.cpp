@@ -13,7 +13,7 @@ float rectX9;
 
 Level::Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font)
     : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
-    sheet(sheet), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), initializePosition(false)
+    sheet(sheet), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), initializePosition(false), viewportEdge(1920)
 {
     
 }
@@ -186,9 +186,9 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
 bool Level::Level2TransitionTriggered()
 {
     
-    return (rectX >= 1440 || rectX1 >= 1440 || rectX2 >= 1440 || rectX3 >= 1440 ||
-        rectX4 >= 1440 || rectX5 >= 1440 || rectX6 >= 1440 || rectX7 >= 1440 ||
-        rectX8 >= 1440 || rectX9 >= 1440);
+    return (rectX >= viewportEdge || rectX1 >= viewportEdge || rectX2 >= viewportEdge || rectX3 >= viewportEdge ||
+        rectX4 >= viewportEdge || rectX5 >= viewportEdge || rectX6 >= viewportEdge || rectX7 >= viewportEdge ||
+        rectX8 >= viewportEdge || rectX9 >= viewportEdge);
 }
 
 void Level::RunLevel2Logic(float deltaTime, float gameTime) 
@@ -257,7 +257,7 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
 
 bool Level::Level2EndTriggered()
 {
-    return (rectX >= 1440 || rectX1 >= 1440 || rectX2 >= 1440 || rectX3 >= 1440 ||
-        rectX4 >= 1440 || rectX5 >= 1440 || rectX6 >= 1440 || rectX7 >= 1440 ||
-        rectX8 >= 1440 || rectX9 >= 1440);
+    return (rectX >= viewportEdge || rectX1 >= viewportEdge || rectX2 >= viewportEdge || rectX3 >= viewportEdge ||
+        rectX4 >= viewportEdge || rectX5 >= viewportEdge || rectX6 >= viewportEdge || rectX7 >= viewportEdge ||
+        rectX8 >= viewportEdge || rectX9 >= viewportEdge);
 }
