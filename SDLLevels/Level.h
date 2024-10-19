@@ -23,8 +23,11 @@ public:
     void RunLevel2Logic(float deltaTime, float gameTime);
     void SetAutoSaveStatus(const std::string& _status);
     bool Level2TransitionTriggered();
+    bool Level2EndTriggered();
+    
     
     bool autoSaved;
+    bool initializePosition;
     
 
 private:
@@ -39,7 +42,8 @@ private:
     float autoSaveMsgTimer;
     string m_autoSaveStatus;
 
-
+    void InitializeWarriorSpeeds(float deltaTime);
+    
 
     // Dependencies 
     SpriteSheet* sheet;

@@ -12,6 +12,8 @@ public:
 
     // Accessors
     short GetClipCurrent() { return (short)m_clipCurrent; }
+    float GetClipSpeed() { return (float)m_clipSpeed; }
+    void SetClipSpeed(float _clipSpeed) { m_clipSpeed = _clipSpeed; }
 
     // Methods
     virtual void Serialize(std::ostream& _stream);
