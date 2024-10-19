@@ -8,7 +8,7 @@
 
 
 GameController::GameController()
-    : currentState(GameState::LEVEL1),gameTime(0.0f)
+    : currentState(GameState::LEVEL1),gameTime(0.0f),autoSaved(false)
 {
 
     m_sdlEvent = {};
@@ -52,7 +52,7 @@ void GameController::RunGame()
     sheet->SetSize(17, 6, 69, 44);
 
     // sheet->AddAnimation(EN_AN_IDLE, 0, 6, 6.0f);
-    sheet->AddAnimation(EN_AN_RUN, 6, 7, 6.0f);
+    sheet->AddAnimation(EN_AN_RUN, 6, 7, 2.0f);
     Level* level = new Level(sheet, r, font);
     
 
@@ -68,11 +68,35 @@ void GameController::RunGame()
         case GameState::LEVEL1:
         {
             //So I pass GetDeltaTime() for frame consistency, gameTime is for the total time passed
-           level->RunLevel1Logic(t->GetDeltaTime(),gameTime);           
+           level->RunLevel1Logic(t->GetDeltaTime(),gameTime);   
+           if (!autoSaved && gameTime >= 5.0f)
+           {
+               ofstream writeStream("level.bin", ios::out | ios::binary);
+               level->Serialize(writeStream);
+               autoSaved = true;
+               level->SetAutoSaveStatus("AutoSave:Yes");
+               writeStream.close();               
+               
+               
+
+               Level* loadedLevel = new Level(sheet, r, font);
+               ifstream readStream("level.bin", ios::in | ios::binary);
+               loadedLevel->Deserialize(readStream);
+               readStream.close();
+           }
+           if (level->Level2TransitionTriggered())
+           {
+               currentState = GameState::LEVEL2; // Change game state to Level 2
+               level->SetAutoSaveStatus("AutoSave:No");
+               //delete level1;
+               std::cout << "transitioning to level2" << endl;
+           }
+           
             break;
         }
         case GameState::LEVEL2:
-
+            
+            level->RunLevel2Logic(t->GetDeltaTime(), gameTime);
             break;
         }
 
@@ -80,12 +104,10 @@ void GameController::RunGame()
     }
     delete SpriteAnim::Pool;
     delete SpriteSheet::Pool;
+    
+    
+    
     r->Shutdown();
 }
 
-void GameController::UpdateLvl1()
-{
 
-
-
-}

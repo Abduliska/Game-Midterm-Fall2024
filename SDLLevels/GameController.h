@@ -18,12 +18,14 @@ public:
 
 	void RunGame();
 
+	bool autoSaved;
+
 private:
 	SDL_Event m_sdlEvent;
 	GameState currentState;
 	float gameTime;
 
-	void UpdateLvl1();
+	
 
 
 };

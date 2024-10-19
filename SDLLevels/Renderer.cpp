@@ -20,7 +20,7 @@ void Renderer::Initialize(int _xResolution, int _yResolution)
 	M_ASSERT((SDL_Init(SDL_INIT_EVERYTHING) >= 0), "Could not Init");//initializes SDL with all its systems(video,audio,etc)
 	m_window = SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, _xResolution, _yResolution, SDL_WINDOW_SHOWN);//creates the window
 	M_ASSERT(m_window != nullptr, "Failed to initialize SDL window.");//checks if window was created 
-	m_renderer = SDL_CreateRenderer(Renderer::Instance().GetWindow(), -1, SDL_RENDERER_PRESENTVSYNC);//associates the renderer with the window
+	m_renderer = SDL_CreateRenderer(Renderer::Instance().GetWindow(), -1, SDL_RENDERER_PRESENTVSYNC);//associates the renderer with the window 
 	M_ASSERT(m_renderer != nullptr, "Failed to initialize SDL renderer.");
 }
 

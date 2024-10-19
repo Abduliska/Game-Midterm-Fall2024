@@ -31,7 +31,7 @@ void SpriteAnim::ClearMemory()
 void SpriteAnim::Update(float _deltaTime)
 {
     
-    m_clipCurrent += m_clipSpeed * _deltaTime;
+    m_clipCurrent += m_clipSpeed *_deltaTime;
 
     
     if (m_clipCurrent > m_clipEnd)

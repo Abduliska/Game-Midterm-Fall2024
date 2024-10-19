@@ -7,7 +7,7 @@
 #include "Timing.h"
 #include "TTFont.h"
 
-class Level
+class Level : public Resource
 {
 public:
     
@@ -15,14 +15,17 @@ public:
     ~Level();
 
     //save and load
-    void Serialize(std::ostream& stream);
-    void Deserialize(std::istream& stream);
-
-    // Function to run level1 logic
-    void RunLevel1Logic(float deltaTime, float gameTime);
+    void Serialize(std::ostream& _stream);
+    void Deserialize(std::istream& _stream);
 
     
+    void RunLevel1Logic(float deltaTime, float gameTime);
+    void RunLevel2Logic(float deltaTime, float gameTime);
+    void SetAutoSaveStatus(const std::string& _status);
+    bool Level2TransitionTriggered();
+    
     bool autoSaved;
+    
 
 private:
     // Variables I will be sending to save and load
@@ -34,6 +37,7 @@ private:
     int currentFrame;
 
     float autoSaveMsgTimer;
+    string m_autoSaveStatus;
 
 
 
