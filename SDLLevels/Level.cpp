@@ -3,22 +3,18 @@
 #include <stdbool.h>
 
 
-
-Level::Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font)
-    : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
-    sheet(sheet), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f), viewportEdge(1920)
+Level::Level(Renderer* renderer, TTFont* font)
+    : rectX(0.0f), rectAsh(0.0f), scale(1.8f), 
+    spriteWidth(69), spriteHeight(44), currentFrame(0),
+    renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f),
+    m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f),
+    scaleRock(1.0f), spriteWidthRock(20), spriteHeightRock(20),
+    viewportEdge(1920)
 {
     if(!isGenerated) GenerateRandomSpeeds();
+    GenerateWarriorSheets();
+    GenerateRockSheets();
 }
-
-
-Level::Level(SpriteSheet* sheet, SpriteSheet* sheet1, Renderer* renderer, TTFont* font)
-    : rectX(0.0f), rectAsh(0.0f), scale(1.8f), spriteWidth(69), spriteHeight(44), currentFrame(0),
-    sheet(sheet), sheetRock(sheet1), renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f), m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f), viewportEdge(1920), spriteHeightRock(20), spriteWidthRock(19), scaleRock(1.0f)
-{
-    if (!isGenerated) GenerateRandomSpeeds();
-}
-
 
 Level::~Level(){}
 
@@ -71,6 +67,33 @@ void Level::GenerateRandomSpeeds() {
     isGenerated = true;
 }
 
+void Level::GenerateWarriorSheets() 
+{
+    for (int i = 0; i < 10; i++) 
+    {
+        SpriteSheet* sheet = SpriteSheet::Pool->GetResource();
+        sheet->Load("../Assets/Textures/Warrior.tga");
+        sheet->SetSize(17, 6, 69, 44);
+        sheet->AddAnimation(EN_AN_RUN, 6, 7, (float)m_randSpeeds[i]/100.0f * 6.0f);
+        sheet->AddAnimation(EN_AN_DEATH, 27, 10, (float)m_randSpeeds[i]/100.0f * 6.0f);
+
+        m_warriorSheets.push_back(sheet);
+    }
+}
+
+void Level::GenerateRockSheets()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        SpriteSheet* sheet = SpriteSheet::Pool->GetResource();
+        sheet->Load("../Assets/Textures/Rock.tga");
+        sheet->SetSize(1, 4, 20, 20);
+        sheet->AddAnimation(ROCK_FALL, 0, 4, (float)m_randSpeeds[i] / 100.0f * 6.0f);
+
+        m_rockSheets.push_back(sheet);
+    }
+}
+
 
 void Level::RunLevel1Logic(float deltaTime,float gameTime)
 {   
@@ -83,8 +106,8 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
     // setting my warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
-        renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime * 2;
+        renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
 
@@ -152,16 +175,16 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
     // Warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
-        renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime ;
+        renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
 
     //Rocks
-    for (int i = 0; i < 10;i++)
+    for (int i = 0; i < 10; i++)
     {
         m_rockYPositions[i] += m_randSpeeds[i] * deltaTime;
-        renderer->RenderTexture(sheetRock, sheetRock->Update(ROCK_FALL, deltaTime),
+        renderer->RenderTexture(m_rockSheets[i], m_rockSheets[i]->Update(ROCK_FALL, deltaTime),
             Rect(offsetsRock[i], m_rockYPositions[i],  (offsetsRock[i] + spriteHeightRock), (m_rockYPositions[i] + spriteWidthRock * scaleRock)));
     }
 
