@@ -40,10 +40,16 @@ private:
     int spriteHeightRock;
     int currentFrame;
     std::vector<int> m_randSpeeds;
+    std::vector<bool> m_warriorIsAlive;
+    std::vector<bool> m_rockIsAlive;
+    std::vector<bool> m_warriorDeathState;
+
     std::vector<SpriteSheet*> m_warriorSheets;
     std::vector<SpriteSheet*> m_rockSheets;
+
     std::vector<float> m_warriorXPositions;
     std::vector<float> m_rockYPositions;
+
     int viewportEdge;
     bool isGenerated = false;
 

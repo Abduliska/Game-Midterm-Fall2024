@@ -7,7 +7,8 @@ Level::Level(Renderer* renderer, TTFont* font)
     : rectX(0.0f), rectAsh(0.0f), scale(1.8f), 
     spriteWidth(69), spriteHeight(44), currentFrame(0),
     renderer(renderer), font(font), autoSaved(false), m_autoSaveStatus("AutoSave:No"), autoSaveMsgTimer(0.0f),
-    m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f),
+    m_warriorXPositions(10, 0.0f), m_rockYPositions(10, 0.0f), 
+    m_warriorIsAlive(10, true), m_rockIsAlive(10, true), m_warriorDeathState(10, false),
     scaleRock(1.0f), spriteWidthRock(20), spriteHeightRock(20),
     viewportEdge(1920)
 {
@@ -94,6 +95,11 @@ void Level::GenerateRockSheets()
     }
 }
 
+bool CheckCollision(float x1A, float y1A, float x2A, float y2A,
+    float x1B, float y1B, float x2B, float y2B) {
+    // Check if the rectangles overlap
+    return !(x1A > x2B || x2A < x1B || y1A > y2B || y2A < y1B);
+}
 
 void Level::RunLevel1Logic(float deltaTime,float gameTime)
 {   
@@ -106,7 +112,7 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
     // setting my warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime * 2;
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
         renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
@@ -175,17 +181,38 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
     // Warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime ;
-        renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_RUN, deltaTime),
-            Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
+        if (m_warriorIsAlive[i])
+        {
+            if(!m_warriorDeathState[i])
+            { 
+                m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
+                renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_RUN, deltaTime),
+                    Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
+            }
+            else
+            {
+                if(m_warriorSheets[i]->GetCurrentClip(EN_AN_DEATH) == 36)
+                { 
+                    m_warriorIsAlive[i] = false;
+                }
+                else
+                {
+                    renderer->RenderTexture(m_warriorSheets[i], m_warriorSheets[i]->Update(EN_AN_DEATH, deltaTime),
+                        Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
+                }
+            }
+        }
     }
 
     //Rocks
     for (int i = 0; i < 10; i++)
     {
-        m_rockYPositions[i] += m_randSpeeds[i] * deltaTime;
-        renderer->RenderTexture(m_rockSheets[i], m_rockSheets[i]->Update(ROCK_FALL, deltaTime),
-            Rect(offsetsRock[i], m_rockYPositions[i],  (offsetsRock[i] + spriteHeightRock), (m_rockYPositions[i] + spriteWidthRock * scaleRock)));
+        if(m_rockIsAlive[i])
+        { 
+            m_rockYPositions[i] += m_randSpeeds[i] * deltaTime;
+            renderer->RenderTexture(m_rockSheets[i], m_rockSheets[i]->Update(ROCK_FALL, deltaTime),
+                Rect(offsetsRock[i], m_rockYPositions[i], (offsetsRock[i] + spriteHeightRock), (m_rockYPositions[i] + spriteWidthRock * scaleRock)));
+        }
     }
 
     //GUI fps
@@ -196,13 +223,39 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
     font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 250, 0 });
     
     font->Write(renderer->GetRenderer(), m_autoSaveStatus.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 500, 0 });
+
+
+    // Collision
+    for (int i = 0; i < 10; i++)
+    {
+        if (m_warriorIsAlive[i])
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                if (m_rockIsAlive[j])
+                {
+                    if (CheckCollision(m_warriorXPositions[i], offsets[i], m_warriorXPositions[i] + spriteWidth, offsets[i] + spriteHeight,
+                        offsetsRock[j], m_rockYPositions[j], offsetsRock[j] + spriteWidthRock, m_rockYPositions[j] + spriteHeightRock))
+                    {
+                        // delete rock
+                        m_rockIsAlive[j] = false;
+
+                        // swap warrior animation to death
+                        m_warriorDeathState[i] = true;
+
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 bool Level::Level2EndTriggered()
 {
     for (int i = 0; i < 10; i++)
     {
-        if (m_warriorXPositions[i] >= viewportEdge-spriteWidth)
+        if (m_warriorXPositions[i] >= viewportEdge-spriteWidth || std::find(m_warriorIsAlive.begin(), m_warriorIsAlive.end(), true) == m_warriorIsAlive.end())
         {
             return true;
         }
