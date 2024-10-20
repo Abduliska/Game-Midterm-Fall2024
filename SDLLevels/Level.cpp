@@ -83,7 +83,7 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
     // setting my warriors
     for (int i = 0; i < 10;i++)
     {
-        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime + 1;
+        m_warriorXPositions[i] += m_randSpeeds[i] * deltaTime;
         renderer->RenderTexture(sheet, sheet->Update(EN_AN_RUN, deltaTime),
             Rect(m_warriorXPositions[i], offsets[i], (m_warriorXPositions[i] + spriteWidth * scale), (offsets[i] + spriteHeight * scale)));
     }
@@ -113,12 +113,12 @@ void Level::RunLevel1Logic(float deltaTime,float gameTime)
 
     //GUI fps
     std::string fps = "FPS: " + std::to_string(Timing::Instance().GetFPS());
-    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 0, 0 });
+    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 100, 0 });
 
     std::string time = "Game Time: " + std::to_string(static_cast<int>(gameTime));
-    font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 100, 0 });
+    font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 250, 0 });
     
-    font->Write(renderer->GetRenderer(), m_autoSaveStatus.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 300, 0 });
+    font->Write(renderer->GetRenderer(), m_autoSaveStatus.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 500, 0 });
 
     
     //std::cout << "Delta Time: " << deltaTime << std::endl;
@@ -128,7 +128,7 @@ bool Level::Level2TransitionTriggered()
 {
     for (int i = 0; i < 10; i++)
     {
-        if (m_warriorXPositions[i] >= viewportEdge)
+        if (m_warriorXPositions[i] >= viewportEdge - spriteWidth)
         {
             std::cout << "Warrior " << i << " was first!" << std::endl;
             m_warriorXPositions = std::vector <float>(10, 0.0f);
@@ -167,20 +167,19 @@ void Level::RunLevel2Logic(float deltaTime, float gameTime)
 
     //GUI fps
     std::string fps = "FPS: " + std::to_string(Timing::Instance().GetFPS());
-    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 0, 0 });
+    font->Write(renderer->GetRenderer(), fps.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 100, 0 });
 
     std::string time = "Game Time: " + std::to_string(static_cast<int>(gameTime));
-    font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 100, 0 });
-
-
-    font->Write(renderer->GetRenderer(), m_autoSaveStatus.c_str(), SDL_Color{ 0, 0, 0 }, SDL_Point{ 300, 0 });
+    font->Write(renderer->GetRenderer(), time.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 250, 0 });
+    
+    font->Write(renderer->GetRenderer(), m_autoSaveStatus.c_str(), SDL_Color{ 0, 0, 255 }, SDL_Point{ 500, 0 });
 }
 
 bool Level::Level2EndTriggered()
 {
     for (int i = 0; i < 10; i++)
     {
-        if (m_warriorXPositions[i] >= viewportEdge)
+        if (m_warriorXPositions[i] >= viewportEdge-spriteWidth)
         {
             return true;
         }

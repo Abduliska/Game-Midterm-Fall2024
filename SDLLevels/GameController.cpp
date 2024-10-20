@@ -49,12 +49,12 @@ void GameController::RunGame()
     sheet->SetSize(17, 6, 69, 44);
 
     // sheet->AddAnimation(EN_AN_IDLE, 0, 6, 6.0f);
-    sheet->AddAnimation(EN_AN_RUN, 6, 7, 2.0f);
+    sheet->AddAnimation(EN_AN_RUN, 6, 7, 1.0f);
     Level* level1 = new Level(sheet, r, font);
     
     sheetRock->Load("../Assets/Textures/Rock.tga");
     sheetRock->SetSize(1, 4, 20, 19);
-    sheetRock->AddAnimation(ROCK_FALL, 1, 1, 2.0f);
+    sheetRock->AddAnimation(ROCK_FALL, 1, 3, 1.0f);
     Level* level2 = new Level(sheet, sheetRock, r, font);
 
     while (m_sdlEvent.type != SDL_QUIT)
