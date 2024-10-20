@@ -11,9 +11,9 @@ class Level : public Resource
 {
 public:
     
-    Level(SpriteSheet* sheet, Renderer* renderer, TTFont* font);
+    Level(Renderer* renderer, TTFont* font);
+    Level(SpriteSheet* sheet, SpriteSheet* sheet1, Renderer* renderer, TTFont* font);
     ~Level();
-
     //save and load
     void Serialize(std::ostream& _stream);
     void Deserialize(std::istream& _stream);
@@ -25,9 +25,7 @@ public:
     bool Level2TransitionTriggered();
     bool Level2EndTriggered();
     
-    
     bool autoSaved;
-    bool initializePosition;
     
 
 private:
@@ -37,17 +35,39 @@ private:
     float scale;
     int spriteWidth;
     int spriteHeight;
+    float scaleRock;
+    int spriteWidthRock;
+    int spriteHeightRock;
     int currentFrame;
+    std::vector<int> m_randSpeeds;
+    std::vector<bool> m_warriorIsAlive;
+    std::vector<bool> m_rockIsAlive;
+    std::vector<bool> m_warriorDeathState;
+
+    std::vector<SpriteSheet*> m_warriorSheets;
+    std::vector<SpriteSheet*> m_rockSheets;
+
+    std::vector<float> m_warriorXPositions;
+    std::vector<float> m_rockYPositions;
+
     int viewportEdge;
+    bool isGenerated = false;
+
+    // Methods
+    void GenerateRandomSpeeds();
+    void InitializeWarriorPositions(vector<float> _warriorXPositions);
+    void GenerateWarriorSheets();
+    void GenerateRockSheets();
+
+    bool IsColliding(const Rect& a, const Rect& b);
 
     float autoSaveMsgTimer;
     string m_autoSaveStatus;
 
-    void InitializeWarriorSpeeds(float deltaTime);
-    
 
     // Dependencies 
     SpriteSheet* sheet;
+    SpriteSheet* sheetRock;
     Renderer* renderer;
     TTFont* font;
 };

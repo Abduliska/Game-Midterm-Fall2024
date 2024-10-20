@@ -15,8 +15,6 @@
 #include <SDL_ttf.h>
 #include <SDL_pixels.h>
 #include <cstdlib>
-#include <cstdlib>  // for rand() and srand()
-#include <ctime> //need this so random number is a diff random num every time the game runs
 
 //Project headers
 #include "Singleton.h"
